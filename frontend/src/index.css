@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+
+body {
+  background-color: var(--color-accent);
+  color: var(--color-text-dark-bg);
+  /* optional: default text color */
+}
+
+
+:root {
+  /* Primary colors */
+  --color-primary: #000000;
+  --color-primary-hover: #1A1A1A;
+
+  /* Secondary colors */
+  --color-secondary: #4A4A4A;
+  --color-secondary-light: #e3e3e3;
+
+  /* Accent colors */
+  --color-accent: #FFFFFF;
+
+  /* Backgrounds */
+  --color-bg-light: #F5F5F5;
+  --color-bg-dark: #2C2C2C;
+
+  /* Borders / dividers */
+  --color-border: #D1D1D1;
+
+  /* Text */
+  --color-text-dark-bg: #000000;
+  --color-text-light-bg: #FFFFFF;
+}
+
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .book-btn {
+    @apply bg-[var(--color-primary)] text-white px-6 py-2 rounded-lg hover:bg-[var(--color-secondary)] transition cursor-pointer;
+  }
+
+  .view-btn {
+    @apply bg-white text-[var(--color-secondary)] px-5 py-2 rounded-lg border border-[var(--color-secondary-light)] hover:bg-[var(--color-secondary-light)] transition cursor-pointer;
+  }
+
+  .pass-field {
+    @apply w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700 pr-12 transition text-gray-900;
+  }
+
+  .text-field {
+    @apply w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700 transition text-gray-900;
+  }
+
+  .sub-btn {
+    @apply w-full py-3 bg-[var(--color-primary)] text-white font-semibold rounded-lg cursor-pointer hover:text-[var(--color-secondary)] transition-all ;
+  }
+
+  .form-container {
+    @apply p-6 bg-white shadow-lg rounded-xl space-y-6 m-4;
+  }
+
+  /* Standard input/textarea fields */
+  .form-input {
+    @apply w-full p-3 border border-[var(--color-border)] rounded-lg;
+  }
+
+  .form-label {
+    @apply block font-medium text-[var(--color-secondary)] mb-1;
+  }
+
+  /* Grid layouts */
+  .form-grid-2 {
+    @apply grid grid-cols-2 gap-4;
+  }
+
+  /* Dropdown */
+  .dropdown {
+    @apply w-full p-3 border border-[var(--color-border)] rounded-lg flex justify-between items-center cursor-pointer bg-white relative;
+  }
+
+  .dropdown-menu {
+    @apply absolute z-10 mt-1 w-full bg-white border border-[var(--color-border)] rounded-md shadow-lg max-h-60 overflow-auto;
+  }
+
+  .dropdown-item {
+    @apply px-4 py-2 cursor-pointer hover:bg-[var(--color-secondary-light)];
+  }
+
+  .dropdown-item-selected {
+    @apply bg-[var(--color-secondary-light)] font-semibold;
+  }
+
+  /* Radio group */
+  .radio-group {
+    @apply flex flex-col items-start justify-between mt-2 ml-4 lg:flex-row;
+  }
+
+  .radio-label {
+    @apply flex items-center gap-2;
+  }
+
+  /* Submit button */
+  .clear-btn {
+    @apply w-full py-3 bg-[var(--color-primary)] text-white font-semibold rounded-lg cursor-pointer hover:text-red-500 transition-all;
+  }
+
+  /* Small helper text */
+  .form-helper {
+    @apply text-sm text-gray-500 mt-1;
+  }
+}
